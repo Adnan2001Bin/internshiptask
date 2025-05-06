@@ -1,5 +1,6 @@
 import Card from "@/components/CardSection";
 import HeroSection from "@/components/HeroSection";
+import ServiceSection from "@/components/ServiceSection";
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroSection />
       <Card />
+      <ServiceSection />
     </div>
 
   );
