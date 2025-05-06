@@ -45,37 +45,27 @@ yarn dev
 
 # Directory Structure
 
-internshiptask/
-├── .next/              # Next.js build output
-├── node_modules/       # Node.js dependencies
-├── public/             # Static assets
-│   ├── Card/           # Card section images
-│   ├── Hero Section/   # Hero section images
-│   ├── RecentWork/     # Recent work images
-│   ├── ServiceCard/    # Service card icons
-│   ├── Group 1.png     # Logo image
-│   └── Group.png       # Service background image
-├── src/                # Source files
-│   ├── app/            # Next.js app directory
-│   │   ├── layout.tsx  # Root layout with Navbar
-│   │   ├── page.tsx    # Home page with all sections
-│   │   └── globals.css # Global styles with Tailwind
-│   ├── components/     # Reusable components
-│   │   ├── CardSection.tsx  # Scrollable card gallery
-│   │   ├── Featured.tsx     # Featured insights list
-│   │   ├── Footer.tsx       # Footer with contact and social links
-│   │   ├── HeroSection.tsx  # Hero section with background and logos
-│   │   ├── Navbar.tsx       # Responsive navigation bar
-│   │   ├── RecentWork.tsx   # Recent works grid
-│   │   └── ServiceSection.tsx # Service offerings grid
-│   └── utils/           # Utility files
-│       └── images.ts    # Image imports
-├── .gitignore           # Git ignore file
-├── eslint.config.mjs    # ESLint configuration
-├── next-env.d.ts        # Next.js type definitions
-├── next.config.ts       # Next.js configuration
-├── package-lock.json    # Lock file for dependencies
-└── README.md            # This file
+tour-mate/
+│
+├── public/                         # Public assets like favicon
+│   └── favicon.svg
+├── src/
+│   ├── app/                        # Next.js app routes
+│   │   ├── layout.tsx              # Global layout for all pages
+│   │   ├── page.tsx                # Main landing page
+│   │   └── ...                     # Other routes
+│   ├── components/                 # Reusable UI components
+│   ├── lib/                        # Utility functions and static data
+│   ├── styles/                     # Global and module-based CSS
+│       ├── globals.css             # Global CSS
+│       └── modules/
+├── .gitignore                       # Git ignore rules
+├── next.config.mjs                  # Next.js configuration
+├── package.json                     # Node.js dependencies and scripts
+├── postcss.config.mjs               # PostCSS configuration
+├── tailwind.config.ts               # TailwindCSS configuration
+├── tsconfig.json                    # TypeScript configuration
+└── README.md                        # Project documentation
 
 
 
