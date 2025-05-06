@@ -42,7 +42,7 @@ yarn dev
 
 4. Visit http://localhost:3000 in your browser to see the app.
 
-5. Directory Structure
+# Directory Structure
 
 my-next-project/
 ├── .next/              # Next.js build output
