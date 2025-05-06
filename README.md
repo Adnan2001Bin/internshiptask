@@ -5,6 +5,7 @@ Welcome to my Next.js project! This is a web application built using Next.js, fe
 ## Overview
 
 This project showcases a portfolio or service-based website with the following key features:
+
 - **Hero Section**: A full-screen introduction with a background image and client logos.
 - **Card Section**: A horizontally scrollable gallery of cards with a scaling effect on the middle card.
 - **Service Section**: A grid layout displaying different service offerings with icons and descriptions.
