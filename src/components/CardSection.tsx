@@ -9,7 +9,6 @@ interface CardItem {
   alt: string;
 }
 
-
 const cardItems: CardItem[] = [
   { src: image1, alt: 'Phone App' },
   { src: image2, alt: 'Blade Tech' },
@@ -22,6 +21,9 @@ const CardSection: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
+  const [velocity, setVelocity] = useState(0);
+  const lastScrollX = useRef(0);
+  const rafId = useRef<number | null>(null);
 
   // Handle middle card scaling
   useEffect(() => {
@@ -56,13 +58,44 @@ const CardSection: React.FC = () => {
     return () => scrollContainer.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Add inertia effect for smoother scrolling
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
+
+    const applyInertia = () => {
+      if (Math.abs(velocity) > 0.1) {
+        scrollContainer.scrollLeft += velocity;
+        setVelocity(velocity * 0.95); // Decelerate
+        rafId.current = requestAnimationFrame(applyInertia);
+      } else {
+        setVelocity(0);
+      }
+    };
+
+    if (!isDragging && velocity !== 0) {
+      rafId.current = requestAnimationFrame(applyInertia);
+    }
+
+    return () => {
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
+  }, [isDragging, velocity]);
+
   // Handle mouse drag scrolling
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
 
     setIsDragging(true);
-    setStartX(e.pageX - scrollContainer.offsetLeft);
+    setStartX(e.pageX);
+    lastScrollX.current = scrollContainer.scrollLeft;
+
+    if (rafId.current) {
+      cancelAnimationFrame(rafId.current);
+    }
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -72,14 +105,22 @@ const CardSection: React.FC = () => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
 
-    const x = e.pageX - scrollContainer.offsetLeft;
-    const walk = (x - startX) * 1.5; 
-    scrollContainer.scrollLeft -= walk;
-    setStartX(x);
+    const x = e.pageX;
+    const deltaX = x - startX;
+    const sensitivity = 0.8; // Reduced sensitivity for smoother dragging
+    const newScrollLeft = lastScrollX.current - deltaX * sensitivity;
+
+    scrollContainer.scrollLeft = newScrollLeft;
+
+    // Calculate velocity for inertia
+    setVelocity(deltaX * 0.1);
   };
 
   const handleMouseUpOrLeave = () => {
-    setIsDragging(false);
+    if (isDragging) {
+      setIsDragging(false);
+      lastScrollX.current = scrollContainerRef.current?.scrollLeft || 0;
+    }
   };
 
   return (
