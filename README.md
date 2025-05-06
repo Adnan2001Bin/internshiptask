@@ -45,7 +45,7 @@ yarn dev
 
 # Directory Structure
 
-my-next-project/
+internshiptask/
 ├── .next/              # Next.js build output
 ├── node_modules/       # Node.js dependencies
 ├── public/             # Static assets
