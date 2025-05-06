@@ -37,7 +37,7 @@ const cardItems: CardItem[] = [
     },
 ];
 
-const ServiceSection: React.FC = () => {
+const ServiceSection = () => {
     const cardColors = [
         'bg-gradient-to-br from-teal-500/50 to-teal-700/50',
         'bg-gradient-to-br from-purple-500/50 to-purple-700/50',
@@ -108,9 +108,12 @@ const ServiceSection: React.FC = () => {
                                 height={40}
                                 className="text-teal-400"
                             />
+                            <div className='flex justify-between w-60'>
                             <h3 className="text-lg sm:text-xl font-semibold text-white">{item.heading}</h3>
+                            <span className="text-teal-400 text-3xl">↗</span>
+                            </div>
+
                             <p className="text-gray-400 text-sm sm:text-base">{item.p}</p>
-                            <span className="text-teal-400 text-xl">→</span>
                         </div>
                     ))}
                 </div>
