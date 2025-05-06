@@ -1,0 +1,11 @@
+import fixMyPhone from '../../public/Hero Section/fixmyphone.png';
+import verdant from '../../public/Hero Section/Verdant.png';
+import duet from '../../public/Hero Section/client-04.png';
+import apex from '../../public/Hero Section/apex.png';
+import lindholms from '../../public/Hero Section/lindholms.png';
+import logo from '../../public/Group 1.png';
+import image1 from "../../public/Card/image (1).png"
+import image2 from "../../public/Card/image (2).png"
+import image3 from "../../public/Card/image (3).png"
+
+export { fixMyPhone, verdant, duet, apex, lindholms, logo ,image1,image2,image3};
