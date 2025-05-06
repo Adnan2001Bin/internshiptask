@@ -37,7 +37,7 @@ const Featured = () => {
         <div className="bg-black text-white py-16 flex justify-center items-center">
             <div className="w-full max-w-4xl px-4">
                 {/* Header Section */}
-                <div className="text-center mb-12">
+                <div className="text-center flex flex-col justify-center bg-gradient-to-r from-black via-gray-800 to-black h-[10rem]">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Rethink Sans, sans-serif' }}>
                         Featured Insights
                     </h1>

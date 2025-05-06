@@ -46,8 +46,8 @@ const cardItems: CardItem[] = [
 const RecentWork = () => {
     return (
         <div className="bg-gray-950 text-white py-16 flex justify-center items-center">
-            <div className="w-full max-w-7xl px-4">
-                <div className="text-center mb-12">
+            <div className="w-full max-w-7xl  px-4">
+                <div className="text-center flex flex-col justify-center bg-gradient-to-r from-black via-gray-800 to-black h-[10rem]">
 
                     <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Rethink Sans, sans-serif' }}>
                         Our Most Recent Works
@@ -58,7 +58,7 @@ const RecentWork = () => {
                 </div>
 
 
-                <div className="space-y-6">
+                <div className="">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 shad">
                         {cardItems.slice(0, 2).map((item) => (
                             <div key={item.alt} className="bg-black rounded-lg overflow-hidden"
