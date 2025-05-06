@@ -79,7 +79,7 @@ my-next-project/
 
 
 
-7. Usage
+# Usage
 Navigate through the site using the Navbar, which includes links to Work, About, Blog, and Contact pages.
 Explore the HeroSection for an introduction and client logos.
 Scroll through the CardSection to view a gallery of images with a zoom effect on the centered card.
