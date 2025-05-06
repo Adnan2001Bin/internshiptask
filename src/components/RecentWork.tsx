@@ -43,11 +43,10 @@ const cardItems: CardItem[] = [
     },
 ];
 
-const RecentWork: React.FC = () => {
+const RecentWork = () => {
     return (
         <div className="bg-gray-950 text-white py-16 flex justify-center items-center">
             <div className="w-full max-w-7xl px-4">
-                {/* Header Section */}
                 <div className="text-center mb-12">
 
                     <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'Rethink Sans, sans-serif' }}>
