@@ -16,7 +16,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-[url('https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg')] bg-cover bg-center bg-no-repeat text-white flex items-center justify-center">
+    <section className="relative min-h-screen bg-[url('https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_1280.jpg')] bg-cover bg-center bg-no-repeat text-white flex items-center justify-center ">
       <div className="absolute inset-0 bg-black/60" />
 
       {/* Content */}
