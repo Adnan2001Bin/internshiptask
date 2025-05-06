@@ -1,4 +1,4 @@
-import Card from "@/components/Card";
+import Card from "@/components/CardSection";
 import HeroSection from "@/components/HeroSection";
 
 
